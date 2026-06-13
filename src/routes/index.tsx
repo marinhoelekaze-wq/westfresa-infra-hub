@@ -37,7 +37,16 @@ function HomePage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-brand-navy-dark text-white">
         <div className="absolute inset-0">
-          <img src={millingAction.url} alt="Fresadora em operação" className="h-full w-full object-cover opacity-40" />
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={millingAction.url}
+            className="h-full w-full object-cover opacity-50"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy-dark/85 to-brand-navy-dark/40" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
