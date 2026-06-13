@@ -4,6 +4,7 @@ import { CTASection } from "@/components/CTA";
 import milling from "@/assets/milling.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
 import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
+import heroVideo from "@/assets/hero.mp4.asset.json";
 
 const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
@@ -36,7 +37,16 @@ function HomePage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-brand-navy-dark text-white">
         <div className="absolute inset-0">
-          <img src={millingAction.url} alt="Fresadora em operação" className="h-full w-full object-cover opacity-40" />
+          <video
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={millingAction.url}
+            className="h-full w-full object-cover opacity-50"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy-dark/85 to-brand-navy-dark/40" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
@@ -63,14 +73,12 @@ function HomePage() {
         </div>
         {/* Stats strip */}
         <div className="relative border-t border-white/10 bg-brand-navy-dark/80 backdrop-blur">
-          <div className="mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-4 px-6 py-6 gap-4">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 px-6 py-6 gap-4">
             {[
-              { v: "+10", l: "Anos de mercado" },
-              { v: "+500", l: "Obras realizadas" },
               { v: "24h", l: "Resposta a orçamentos" },
               { v: "100%", l: "Equipe certificada" },
             ].map((s) => (
-              <div key={s.l} className="text-center md:text-left">
+              <div key={s.l} className="text-center sm:text-left">
                 <div className="text-2xl md:text-3xl font-black text-brand-orange">{s.v}</div>
                 <div className="text-xs uppercase tracking-wider text-white/60">{s.l}</div>
               </div>
