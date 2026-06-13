@@ -4,6 +4,7 @@ import { CTASection } from "@/components/CTA";
 import milling from "@/assets/milling.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
 import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
+import heroVideo from "@/assets/hero.mp4.asset.json";
 
 const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
