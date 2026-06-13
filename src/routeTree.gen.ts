@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ProjetosRouteImport } from './routes/projetos'
+import { Route as LocacaoDeMaquinasRouteImport } from './routes/locacao-de-maquinas'
+import { Route as FresagemAsfalticaRouteImport } from './routes/fresagem-asfaltica'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetosRoute = ProjetosRouteImport.update({
+  id: '/projetos',
+  path: '/projetos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocacaoDeMaquinasRoute = LocacaoDeMaquinasRouteImport.update({
+  id: '/locacao-de-maquinas',
+  path: '/locacao-de-maquinas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FresagemAsfalticaRoute = FresagemAsfalticaRouteImport.update({
+  id: '/fresagem-asfaltica',
+  path: '/fresagem-asfaltica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
+  '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
+  '/projetos': typeof ProjetosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
+  '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
+  '/projetos': typeof ProjetosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
+  '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
+  '/projetos': typeof ProjetosRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contato'
+    | '/fresagem-asfaltica'
+    | '/locacao-de-maquinas'
+    | '/projetos'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contato'
+    | '/fresagem-asfaltica'
+    | '/locacao-de-maquinas'
+    | '/projetos'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/contato'
+    | '/fresagem-asfaltica'
+    | '/locacao-de-maquinas'
+    | '/projetos'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
+  FresagemAsfalticaRoute: typeof FresagemAsfalticaRoute
+  LocacaoDeMaquinasRoute: typeof LocacaoDeMaquinasRoute
+  ProjetosRoute: typeof ProjetosRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetos': {
+      id: '/projetos'
+      path: '/projetos'
+      fullPath: '/projetos'
+      preLoaderRoute: typeof ProjetosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locacao-de-maquinas': {
+      id: '/locacao-de-maquinas'
+      path: '/locacao-de-maquinas'
+      fullPath: '/locacao-de-maquinas'
+      preLoaderRoute: typeof LocacaoDeMaquinasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fresagem-asfaltica': {
+      id: '/fresagem-asfaltica'
+      path: '/fresagem-asfaltica'
+      fullPath: '/fresagem-asfaltica'
+      preLoaderRoute: typeof FresagemAsfalticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +157,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
+  FresagemAsfalticaRoute: FresagemAsfalticaRoute,
+  LocacaoDeMaquinasRoute: LocacaoDeMaquinasRoute,
+  ProjetosRoute: ProjetosRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
