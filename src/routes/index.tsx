@@ -73,14 +73,12 @@ function HomePage() {
         </div>
         {/* Stats strip */}
         <div className="relative border-t border-white/10 bg-brand-navy-dark/80 backdrop-blur">
-          <div className="mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-4 px-6 py-6 gap-4">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 px-6 py-6 gap-4">
             {[
-              { v: "+10", l: "Anos de mercado" },
-              { v: "+500", l: "Obras realizadas" },
               { v: "24h", l: "Resposta a orçamentos" },
               { v: "100%", l: "Equipe certificada" },
             ].map((s) => (
-              <div key={s.l} className="text-center md:text-left">
+              <div key={s.l} className="text-center sm:text-left">
                 <div className="text-2xl md:text-3xl font-black text-brand-orange">{s.v}</div>
                 <div className="text-xs uppercase tracking-wider text-white/60">{s.l}</div>
               </div>
