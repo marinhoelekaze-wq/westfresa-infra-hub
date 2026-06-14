@@ -121,7 +121,7 @@ function HomePage() {
           </div>
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-orange/10 rounded-2xl -rotate-2" />
-            <img src={machineCloseup.url} alt="Fresadora West Fresa W 100 Fi" className="relative rounded-2xl shadow-2xl object-cover aspect-[4/3] w-full" />
+            <img src={sobreImg.url} alt="Fresadora Wirtgen W 200 Fi West Fresa" className="relative rounded-2xl shadow-2xl object-cover aspect-[4/3] w-full" />
           </div>
         </div>
       </section>
