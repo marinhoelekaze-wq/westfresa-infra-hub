@@ -1,20 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Wrench, Settings2, TrendingUp, DollarSign, Truck, ShieldCheck } from "lucide-react";
 import { CTASection, PageHeader } from "@/components/CTA";
-import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
-import millingAction from "@/assets/milling-action.jpg.asset.json";
-import transport from "@/assets/transport.jpg.asset.json";
 
-const WHATSAPP_URL = `https://wa.me/5511940319914?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
+const machineCloseup = "/machine-closeup.jpg";
+const millingAction = "/milling-action.jpg";
+const transport = "/transport.jpg";
+
+const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
 
 export const Route = createFileRoute("/locacao-de-maquinas")({
   head: () => ({
     meta: [
       { title: "Locação de Máquinas e Equipamentos | West Fresa" },
-      { name: "description", content: "Locação de fresadoras e equipamentos para infraestrutura. Frota Wirtgen moderna com manutenção preventiva e suporte técnico completo." },
+      { name: "description", content: "Locação de fresadoras e equipamentos para infraestrutura. Frota Wirtgen moderna." },
       { property: "og:title", content: "Locação de Máquinas | West Fresa" },
-      { property: "og:description", content: "Equipamentos modernos para construtoras e empreiteiras com manutenção preventiva." },
-      { property: "og:image", content: machineCloseup.url },
+      { property: "og:image", content: machineCloseup },
     ],
     links: [{ rel: "canonical", href: "/locacao-de-maquinas" }],
   }),
@@ -22,9 +22,9 @@ export const Route = createFileRoute("/locacao-de-maquinas")({
 });
 
 const equipment = [
-  { name: "Wirtgen W 100 Fi", spec: "Fresadora compacta", desc: "Ideal para vias urbanas, estacionamentos e obras de médio porte. Largura de corte 1,00 m.", img: machineCloseup.url },
-  { name: "Wirtgen W 200 Fi", spec: "Fresadora de grande porte", desc: "Alta produtividade para rodovias e obras de grande extensão. Largura de corte 2,00 m.", img: millingAction.url },
-  { name: "Suporte Logístico", spec: "Caminhões e pranchas", desc: "Transporte especializado para mobilização dos equipamentos até a obra.", img: transport.url },
+  { name: "Wirtgen W 100 Fi", spec: "Fresadora compacta", desc: "Ideal para vias urbanas, estacionamentos e obras de médio porte. Largura de corte 1,00 m.", img: machineCloseup },
+  { name: "Wirtgen W 200 Fi", spec: "Fresadora de grande porte", desc: "Alta produtividade para rodovias e obras de grande extensão. Largura de corte 2,00 m.", img: millingAction },
+  { name: "Suporte Logístico", spec: "Caminhões e pranchas", desc: "Transporte especializado para mobilização dos equipamentos até a obra.", img: transport },
 ];
 
 const benefits = [
@@ -39,12 +39,7 @@ const benefits = [
 function LocacaoPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Equipamentos para infraestrutura"
-        title="Locação de Máquinas e Equipamentos"
-        description="Frota Wirtgen moderna com manutenção preventiva, operadores certificados e suporte técnico completo para sua obra."
-      />
-
+      <PageHeader eyebrow="Equipamentos para infraestrutura" title="Locação de Máquinas e Equipamentos" description="Frota Wirtgen moderna com manutenção preventiva, operadores certificados e suporte técnico completo." />
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
@@ -67,28 +62,6 @@ function LocacaoPage() {
           </div>
         </div>
       </section>
-
-      {/* Manutenção */}
-      <section className="py-20 bg-brand-navy text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img src={machineCloseup.url} alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-6 grid gap-12 lg:grid-cols-2 items-center">
-          <div>
-            <p className="text-brand-orange font-bold uppercase tracking-widest text-xs mb-3">Confiabilidade</p>
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">Manutenção Preventiva Rigorosa</h2>
-            <p className="mt-6 text-white/85 leading-relaxed">
-              Toda nossa frota passa por um programa de manutenção preventiva sistemática, com checklist completo antes de cada locação. Isso garante máxima disponibilidade operacional, segurança e eficiência durante toda a obra.
-            </p>
-            <ul className="mt-6 space-y-3 text-white/85">
-              {["Revisão completa entre obras", "Peças e bits Wirtgen originais", "Equipe técnica para suporte em campo", "Documentação e certificações em dia"].map((i) => (
-                <li key={i} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-brand-orange" /> {i}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-secondary">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
@@ -113,7 +86,6 @@ function LocacaoPage() {
           </div>
         </div>
       </section>
-
       <CTASection />
     </>
   );
