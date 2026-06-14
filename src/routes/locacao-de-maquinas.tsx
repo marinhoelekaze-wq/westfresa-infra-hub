@@ -5,7 +5,7 @@ import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
 import transport from "@/assets/transport.jpg.asset.json";
 
-const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
+const WHATSAPP_URL = `https://wa.me/5511940319914?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
 
 export const Route = createFileRoute("/locacao-de-maquinas")({
   head: () => ({

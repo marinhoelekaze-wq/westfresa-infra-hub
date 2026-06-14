@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-const WHATSAPP = "5511999999999";
+const WHATSAPP = "5511940319914";
 
 export function CTASection() {
   const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;

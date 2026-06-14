@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
 
-const WHATSAPP = "5511999999999";
+const WHATSAPP = "5511940319914";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
 const navItems = [
@@ -22,7 +22,7 @@ export function Layout() {
       <div className="hidden bg-brand-navy-dark text-white/80 text-xs md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><Phone className="h-3 w-3 text-brand-orange" /> (11) 99999-9999</span>
+            <span className="flex items-center gap-2"><Phone className="h-3 w-3 text-brand-orange" /> (11) 94031-9914</span>
             <span className="flex items-center gap-2"><Mail className="h-3 w-3 text-brand-orange" /> contato@westfresa.com.br</span>
           </div>
           <span className="flex items-center gap-2"><MapPin className="h-3 w-3 text-brand-orange" /> Atendimento em todo Brasil</span>
@@ -109,7 +109,7 @@ export function Layout() {
           <div>
             <h4 className="text-white font-bold uppercase text-sm mb-4 tracking-wide">Contato</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-orange shrink-0" /> (11) 99999-9999</li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-brand-orange shrink-0" /> (11) 94031-9914</li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-brand-orange shrink-0" /> contato@westfresa.com.br</li>
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-brand-orange shrink-0" /> Atendimento em todo Brasil</li>
             </ul>
