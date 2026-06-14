@@ -3,7 +3,7 @@ import { Users, Wrench, Zap, ShieldCheck, Clock, Headphones, ArrowRight } from "
 import { CTASection } from "@/components/CTA";
 import milling from "@/assets/milling.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
-import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
+import machineCloseup from "@/assets/sobre-westfresa.jpg.asset.json";
 import heroVideo from "@/assets/hero-construction.mp4.asset.json";
 
 const WHATSAPP_URL = `https://wa.me/5511940319914?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
