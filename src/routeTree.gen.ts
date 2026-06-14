@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ProjetosRouteImport } from './routes/projetos'
 import { Route as LocacaoDeMaquinasRouteImport } from './routes/locacao-de-maquinas'
 import { Route as FresagemAsfalticaRouteImport } from './routes/fresagem-asfaltica'
 import { Route as ContatoRouteImport } from './routes/contato'
@@ -19,11 +18,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjetosRoute = ProjetosRouteImport.update({
-  id: '/projetos',
-  path: '/projetos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocacaoDeMaquinasRoute = LocacaoDeMaquinasRouteImport.update({
@@ -52,7 +46,6 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
   '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
-  '/projetos': typeof ProjetosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -60,7 +53,6 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
   '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
-  '/projetos': typeof ProjetosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -69,7 +61,6 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/fresagem-asfaltica': typeof FresagemAsfalticaRoute
   '/locacao-de-maquinas': typeof LocacaoDeMaquinasRoute
-  '/projetos': typeof ProjetosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -79,7 +70,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/fresagem-asfaltica'
     | '/locacao-de-maquinas'
-    | '/projetos'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -87,7 +77,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/fresagem-asfaltica'
     | '/locacao-de-maquinas'
-    | '/projetos'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -95,7 +84,6 @@ export interface FileRouteTypes {
     | '/contato'
     | '/fresagem-asfaltica'
     | '/locacao-de-maquinas'
-    | '/projetos'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -104,7 +92,6 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   FresagemAsfalticaRoute: typeof FresagemAsfalticaRoute
   LocacaoDeMaquinasRoute: typeof LocacaoDeMaquinasRoute
-  ProjetosRoute: typeof ProjetosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -115,13 +102,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projetos': {
-      id: '/projetos'
-      path: '/projetos'
-      fullPath: '/projetos'
-      preLoaderRoute: typeof ProjetosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locacao-de-maquinas': {
@@ -160,7 +140,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   FresagemAsfalticaRoute: FresagemAsfalticaRoute,
   LocacaoDeMaquinasRoute: LocacaoDeMaquinasRoute,
-  ProjetosRoute: ProjetosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
