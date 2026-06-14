@@ -7,7 +7,7 @@ const millingAction = "/milling-action.jpg";
 const machineCloseup = "/machine-closeup.jpg";
 const heroVideo = "/hero.mp4";
 
-const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
+const WHATSAPP_URL = `https://wa.me/5511947653991?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
