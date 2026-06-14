@@ -2,6 +2,7 @@ import { Link, Outlet } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
+import logoFooter from "@/assets/logo-westfresa.png.asset.json";
 
 const WHATSAPP = "5511940319914";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
@@ -10,7 +11,6 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/fresagem-asfaltica", label: "Fresagem Asfáltica" },
   { to: "/locacao-de-maquinas", label: "Locação de Máquinas" },
-  { to: "/projetos", label: "Projetos" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
