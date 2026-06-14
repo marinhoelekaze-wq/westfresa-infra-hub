@@ -1,8 +1,9 @@
+// images served from public/
 import { Link, Outlet } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
-import logoFooter from "@/assets/logo-westfresa.png.asset.json";
+
+
 
 const WHATSAPP = "5511940319914";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
@@ -33,7 +34,7 @@ export function Layout() {
       <header className="sticky top-0 z-40 border-b border-border bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
           <Link to="/" className="flex items-center gap-3 min-w-0">
-            <img src={logo.url} alt="West Fresa" className="h-12 w-auto shrink-0" />
+            <img src="/logo.png" alt="West Fresa" className="h-12 w-auto shrink-0" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
@@ -93,7 +94,7 @@ export function Layout() {
       <footer className="bg-brand-navy-dark text-white/80">
         <div className="mx-auto max-w-7xl px-6 py-12 grid gap-8 md:grid-cols-3">
           <div>
-            <img src={logoFooter.url} alt="West Fresa" className="h-20 w-auto mb-4" />
+            <img src="/logo.png" alt="West Fresa" className="h-20 w-auto mb-4" />
             <p className="text-sm leading-relaxed">
               WEST FRESA — Fresagem Asfáltica e Locação de Máquinas e Equipamentos para Infraestrutura. Precisão e qualidade na infraestrutura.
             </p>
