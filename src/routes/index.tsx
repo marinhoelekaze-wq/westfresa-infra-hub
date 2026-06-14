@@ -4,7 +4,7 @@ import { CTASection } from "@/components/CTA";
 import milling from "@/assets/milling.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
 import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
-import heroVideo from "@/assets/hero.mp4.asset.json";
+import heroVideo from "@/assets/hero-construction.mp4.asset.json";
 
 const WHATSAPP_URL = `https://wa.me/5511940319914?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
 
@@ -45,9 +45,10 @@ function HomePage() {
             playsInline
             preload="auto"
             poster={millingAction.url}
-            className="h-full w-full object-cover opacity-50"
+            className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy-dark/85 to-brand-navy-dark/40" />
+          <div className="absolute inset-0 bg-brand-navy-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark/80 via-brand-navy-dark/50 to-brand-navy-dark/30" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl">

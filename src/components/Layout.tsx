@@ -2,6 +2,7 @@ import { Link, Outlet } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
+import logoFooter from "@/assets/logo-westfresa.png.asset.json";
 
 const WHATSAPP = "5511940319914";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
@@ -10,7 +11,6 @@ const navItems = [
   { to: "/", label: "Home" },
   { to: "/fresagem-asfaltica", label: "Fresagem Asfáltica" },
   { to: "/locacao-de-maquinas", label: "Locação de Máquinas" },
-  { to: "/projetos", label: "Projetos" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
@@ -93,7 +93,7 @@ export function Layout() {
       <footer className="bg-brand-navy-dark text-white/80">
         <div className="mx-auto max-w-7xl px-6 py-12 grid gap-8 md:grid-cols-3">
           <div>
-            <img src={logo.url} alt="West Fresa" className="h-14 w-auto mb-4" />
+            <img src={logoFooter.url} alt="West Fresa" className="h-20 w-auto mb-4" />
             <p className="text-sm leading-relaxed">
               WEST FRESA — Fresagem Asfáltica e Locação de Máquinas e Equipamentos para Infraestrutura. Precisão e qualidade na infraestrutura.
             </p>
