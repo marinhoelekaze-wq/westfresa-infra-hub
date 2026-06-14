@@ -93,7 +93,7 @@ export function Layout() {
       <footer className="bg-brand-navy-dark text-white/80">
         <div className="mx-auto max-w-7xl px-6 py-12 grid gap-8 md:grid-cols-3">
           <div>
-            <img src={logo.url} alt="West Fresa" className="h-14 w-auto mb-4" />
+            <img src={logoFooter.url} alt="West Fresa" className="h-20 w-auto mb-4" />
             <p className="text-sm leading-relaxed">
               WEST FRESA — Fresagem Asfáltica e Locação de Máquinas e Equipamentos para Infraestrutura. Precisão e qualidade na infraestrutura.
             </p>
