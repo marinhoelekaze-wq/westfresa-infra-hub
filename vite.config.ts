@@ -11,7 +11,10 @@ export default defineConfig({
     tailwindcss(),
     TanStackRouterVite({ autoCodeSplitting: true }),
     tanstackStart({
-      server: { entry: "server" },
+      server: {
+        entry: "server",
+        preset: "vercel", // <-- linha adicionada
+      },
     }),
     react(),
   ],
