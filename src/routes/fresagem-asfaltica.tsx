@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import { CTASection, PageHeader } from "@/components/CTA";
-import milling from "@/assets/milling.jpg.asset.json";
+import milling from "@/assets/fresagem-westfresa.jpg.asset.json";
 import millingAction from "@/assets/milling-action.jpg.asset.json";
+import millingOriginal from "@/assets/milling.jpg.asset.json";
 import machineCloseup from "@/assets/machine-closeup.jpg.asset.json";
 import transport from "@/assets/transport.jpg.asset.json";
 import loading from "@/assets/loading.jpg.asset.json";
