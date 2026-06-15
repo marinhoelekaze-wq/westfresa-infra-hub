@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, MessageCircle, Send, CheckCircle2 } from "lucide-r
 import { PageHeader } from "@/components/CTA";
 import { z } from "zod";
 
-const WHATSAPP = "5511940319914";
+const WHATSAPP = "5511947653991";
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -82,14 +82,14 @@ function ContatoPage() {
                   <div className="h-10 w-10 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0"><Phone className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase text-white/60 tracking-wider">Telefone</div>
-                    <div className="font-bold">(11) 94031-9914</div>
+                    <div className="font-bold">(11) 94765-3991</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="h-10 w-10 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0"><MessageCircle className="h-5 w-5" /></div>
                   <div>
                     <div className="text-xs uppercase text-white/60 tracking-wider">WhatsApp</div>
-                    <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener" className="font-bold hover:text-brand-orange">(11) 94031-9914</a>
+                    <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener" className="font-bold hover:text-brand-orange">(11) 94765-3991</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -102,8 +102,9 @@ function ContatoPage() {
                 <li className="flex items-start gap-3">
                   <div className="h-10 w-10 rounded-lg bg-brand-orange/20 text-brand-orange flex items-center justify-center shrink-0"><MapPin className="h-5 w-5" /></div>
                   <div>
-                    <div className="text-xs uppercase text-white/60 tracking-wider">Atendimento</div>
-                    <div className="font-bold">Todo o Brasil</div>
+                    <div className="text-xs uppercase text-white/60 tracking-wider">Endereço</div>
+                    <div className="font-bold">R. Thomekiti Kira, 290</div>
+                    <div className="text-sm text-white/80">Granja Viana, Cotia - SP, 06709-046</div>
                   </div>
                 </li>
               </ul>
