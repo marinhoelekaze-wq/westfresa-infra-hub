@@ -6,7 +6,7 @@ const machineCloseup = "/machine-closeup.jpg";
 const millingAction = "/milling-action.jpg";
 const transport = "/transport.jpg";
 
-const WHATSAPP_URL = `https://wa.me/5511999999999?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
+const WHATSAPP_URL = `https://wa.me/5511947653991?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
 
 export const Route = createFileRoute("/locacao-de-maquinas")({
   head: () => ({
