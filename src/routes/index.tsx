@@ -4,7 +4,7 @@ import { CTASection } from "@/components/CTA";
 
 const milling = "/milling.jpg";
 const millingAction = "/milling-action.jpg";
-const machineCloseup = "/machine-closeup.jpg";
+const machineCloseup = "/frota.jpg";
 const heroVideo = "/hero.mp4";
 
 const WHATSAPP_URL = `https://wa.me/5511947653991?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
@@ -78,8 +78,8 @@ function HomePage() {
             <p className="text-brand-orange font-bold uppercase tracking-widest text-xs mb-3">Sobre nós</p>
             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight text-brand-navy">Sobre a West Fresa</h2>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-              <p>A <strong className="text-brand-navy">West Fresa</strong> é especializada em fresagem asfáltica e locação de máquinas e equipamentos para infraestrutura. Atendemos construtoras, empreiteiras e empresas de infraestrutura em todo o território nacional.</p>
-              <p>Combinamos uma frota de equipamentos Wirtgen de última geração com uma equipe técnica altamente qualificada, garantindo precisão milimétrica, alta produtividade e segurança operacional em cada projeto.</p>
+              <p>A <strong className="text-brand-navy">West Fresa</strong> é especializada em fresagem asfáltica e locação de máquinas e equipamentos para infraestrutura. Atendemos construtoras, empreiteiras e empresas de infraestrutura em São Paulo e região.</p>
+              <p>Combinamos uma frota de equipamentos modernos de última geração com uma equipe técnica altamente qualificada, garantindo precisão milimétrica, alta produtividade e segurança operacional em cada projeto.</p>
               <p>Nosso compromisso vai além da entrega: priorizamos qualidade, prazo e relacionamento de longo prazo com nossos clientes.</p>
             </div>
             <div className="mt-8 grid grid-cols-3 gap-4">
