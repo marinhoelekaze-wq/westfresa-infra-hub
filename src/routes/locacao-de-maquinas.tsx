@@ -3,8 +3,8 @@ import { Wrench, Settings2, TrendingUp, DollarSign, Truck, ShieldCheck } from "l
 import { CTASection, PageHeader } from "@/components/CTA";
 
 const machineCloseup = "/machine-closeup.jpg";
-const millingAction = "/milling-action.jpg";
-const transport = "/transport.jpg";
+const bobcat = "/bobcat.jpg";
+const transportNew = "/transport-new.jpg";
 
 const WHATSAPP_URL = `https://wa.me/5511947653991?text=${encodeURIComponent("Olá! Gostaria de informações sobre locação de máquinas.")}`;
 
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/locacao-de-maquinas")({
   head: () => ({
     meta: [
       { title: "Locação de Máquinas e Equipamentos | West Fresa" },
-      { name: "description", content: "Locação de fresadoras e equipamentos para infraestrutura. Frota Wirtgen moderna." },
+      { name: "description", content: "Locação de fresadoras e equipamentos para infraestrutura. Frota moderna com manutenção preventiva." },
       { property: "og:title", content: "Locação de Máquinas | West Fresa" },
       { property: "og:image", content: machineCloseup },
     ],
@@ -22,15 +22,15 @@ export const Route = createFileRoute("/locacao-de-maquinas")({
 });
 
 const equipment = [
-  { name: "Wirtgen W 100 Fi", spec: "Fresadora compacta", desc: "Ideal para vias urbanas, estacionamentos e obras de médio porte. Largura de corte 1,00 m.", img: machineCloseup },
-  { name: "Wirtgen W 200 Fi", spec: "Fresadora de grande porte", desc: "Alta produtividade para rodovias e obras de grande extensão. Largura de corte 2,00 m.", img: millingAction },
-  { name: "Suporte Logístico", spec: "Caminhões e pranchas", desc: "Transporte especializado para mobilização dos equipamentos até a obra.", img: transport },
+  { name: "Fresadora W 100 Fi", spec: "Fresadora compacta", desc: "Ideal para vias urbanas, estacionamentos e obras de médio porte. Largura de corte 1,00 m.", img: machineCloseup },
+  { name: "Bobcat S770", spec: "Mini carregadeira", desc: "Versatilidade e alta performance para obras em espaços reduzidos e serviços de fresagem urbana.", img: bobcat },
+  { name: "Transporte", spec: "Caminhões e pranchas", desc: "Transporte especializado para mobilização dos equipamentos até a obra.", img: transportNew },
 ];
 
 const benefits = [
   { icon: DollarSign, title: "Redução de custos", desc: "Elimine investimentos em compra, depreciação e armazenamento de equipamentos." },
   { icon: Wrench, title: "Manutenção inclusa", desc: "Equipamentos sempre prontos, com manutenção preventiva rigorosa." },
-  { icon: TrendingUp, title: "Alta produtividade", desc: "Frota moderna com tecnologia Wirtgen de última geração." },
+  { icon: TrendingUp, title: "Alta produtividade", desc: "Frota moderna com equipamentos de última geração." },
   { icon: Settings2, title: "Flexibilidade", desc: "Locação sob medida — diária, semanal, mensal ou por obra." },
   { icon: Truck, title: "Logística completa", desc: "Cuidamos do transporte, mobilização e desmobilização do equipamento." },
   { icon: ShieldCheck, title: "Operadores certificados", desc: "Equipe técnica especializada acompanha a operação quando necessário." },
@@ -39,7 +39,7 @@ const benefits = [
 function LocacaoPage() {
   return (
     <>
-      <PageHeader eyebrow="Equipamentos para infraestrutura" title="Locação de Máquinas e Equipamentos" description="Frota Wirtgen moderna com manutenção preventiva, operadores certificados e suporte técnico completo." />
+      <PageHeader eyebrow="Equipamentos para infraestrutura" title="Locação de Máquinas e Equipamentos" description="Frota moderna com manutenção preventiva, operadores certificados e suporte técnico completo." />
       <section className="py-20 bg-background">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
