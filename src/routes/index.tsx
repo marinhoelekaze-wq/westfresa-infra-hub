@@ -25,9 +25,9 @@ export const Route = createFileRoute("/")({
 
 const differentials = [
   { icon: Users, title: "Equipe Especializada", desc: "Operadores certificados com vasta experiência em fresagem e operação de equipamentos." },
-  { icon: Wrench, title: "Equipamentos Modernos", desc: "Frota Wirtgen de última geração com manutenção preventiva rigorosa." },
+  { icon: Wrench, title: "Equipamentos Modernos", desc: "Frotas e equipamentos de última geração com manutenção preventiva rigorosa." },
   { icon: Zap, title: "Atendimento Ágil", desc: "Resposta rápida ao orçamento e mobilização eficiente para sua obra." },
-  { icon: ShieldCheck, title: "Segurança Operacional", desc: "Protocolos NR rigorosos e equipe treinada em segurança do trabalho." },
+  { icon: ShieldCheck, title: "Compromisso", desc: "Dedicação total em cada projeto, cumprindo prazos e superando expectativas." },
   { icon: Clock, title: "Compromisso com Prazo", desc: "Planejamento detalhado e entregas dentro do cronograma acordado." },
   { icon: Headphones, title: "Suporte Técnico", desc: "Acompanhamento técnico durante toda a execução do serviço." },
 ];
@@ -37,8 +37,8 @@ function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-brand-navy-dark text-white">
         <div className="absolute inset-0">
-          <video src={heroVideo} autoPlay muted loop playsInline preload="auto" poster={millingAction} className="h-full w-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark via-brand-navy-dark/85 to-brand-navy-dark/40" />
+          <video src={heroVideo} autoPlay muted loop playsInline preload="auto" poster={millingAction} className="h-full w-full object-cover opacity-75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark/80 via-brand-navy-dark/50 to-brand-navy-dark/20" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl">
@@ -54,9 +54,6 @@ function HomePage() {
               <Link to="/contato" className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-orange px-7 py-4 font-bold uppercase tracking-wide text-white shadow-xl hover:bg-brand-orange-dark transition-all hover:translate-y-[-2px]">
                 Solicitar Orçamento <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="inline-flex items-center justify-center gap-2 rounded-md bg-white/10 backdrop-blur border-2 border-white/30 px-7 py-4 font-bold uppercase tracking-wide text-white hover:bg-white/20 transition-all">
-                Falar no WhatsApp
-              </a>
             </div>
           </div>
         </div>
@@ -83,7 +80,7 @@ function HomePage() {
               <p>Nosso compromisso vai além da entrega: priorizamos qualidade, prazo e relacionamento de longo prazo com nossos clientes.</p>
             </div>
             <div className="mt-8 grid grid-cols-3 gap-4">
-              {[{ v: "Qualidade", d: "Padrão técnico elevado" }, { v: "Segurança", d: "NR e ISO compliance" }, { v: "Produtividade", d: "Alta performance" }].map((b) => (
+              {[{ v: "Qualidade", d: "Padrão técnico elevado" }, { v: "Compromisso", d: "Dedicação em cada projeto" }, { v: "Produtividade", d: "Alta performance" }].map((b) => (
                 <div key={b.v} className="border-l-4 border-brand-orange pl-3">
                   <div className="font-black text-brand-navy text-sm uppercase">{b.v}</div>
                   <div className="text-xs text-muted-foreground">{b.d}</div>
