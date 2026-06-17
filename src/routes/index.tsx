@@ -1,13 +1,88 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Users, Wrench, Zap, ShieldCheck, Clock, Headphones, ArrowRight } from "lucide-react";
 import { CTASection } from "@/components/CTA";
+import { useState, useEffect, useRef } from "react";
 
 const milling = "/milling.jpg";
-const millingAction = "/milling-action.jpg";
 const machineCloseup = "/frota.jpg";
-const heroVideo = "/hero.mp4";
 
 const WHATSAPP_URL = `https://wa.me/5511947653991?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento.")}`;
+
+// Carrossel: vídeo primeiro, depois fotos intercaladas
+const heroSlides = [
+  { type: "video", src: "/hero.mp4" },
+  { type: "image", src: "/slide1.jpg" },
+  { type: "image", src: "/slide6.jpg" },
+  { type: "video", src: "/hero2.mp4" },
+  { type: "image", src: "/slide9.jpg" },
+  { type: "image", src: "/slide2.jpg" },
+  { type: "image", src: "/slide10.jpg" },
+  { type: "image", src: "/slide3.jpg" },
+  { type: "image", src: "/slide7.jpg" },
+  { type: "image", src: "/slide11.jpg" },
+  { type: "image", src: "/slide4.jpg" },
+  { type: "image", src: "/slide8.jpg" },
+  { type: "image", src: "/slide12.jpg" },
+  { type: "image", src: "/slide5.jpg" },
+  { type: "image", src: "/slide13.jpg" },
+];
+
+function HeroCarousel() {
+  const [current, setCurrent] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const slide = heroSlides[current];
+    if (slide.type === "video") {
+      // Wait for video to play 5s then advance
+      const timer = setTimeout(() => {
+        setCurrent((prev) => (prev + 1) % heroSlides.length);
+      }, 5000);
+      return () => clearTimeout(timer);
+    } else {
+      const timer = setTimeout(() => {
+        setCurrent((prev) => (prev + 1) % heroSlides.length);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [current]);
+
+  useEffect(() => {
+    if (heroSlides[current].type === "video" && videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [current]);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {heroSlides.map((slide, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
+        >
+          {slide.type === "video" ? (
+            <video
+              ref={i === current ? videoRef : undefined}
+              src={slide.src}
+              autoPlay
+              muted
+              playsInline
+              className="h-full w-full object-cover opacity-75"
+            />
+          ) : (
+            <img
+              src={slide.src}
+              alt=""
+              className="h-full w-full object-cover opacity-75"
+            />
+          )}
+        </div>
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark/80 via-brand-navy-dark/50 to-brand-navy-dark/20" />
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,10 +111,7 @@ function HomePage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-brand-navy-dark text-white">
-        <div className="absolute inset-0">
-          <video src={heroVideo} autoPlay muted loop playsInline preload="auto" poster={millingAction} className="h-full w-full object-cover opacity-75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy-dark/80 via-brand-navy-dark/50 to-brand-navy-dark/20" />
-        </div>
+        <HeroCarousel />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-brand-orange mb-6">
