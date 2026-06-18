@@ -32,7 +32,7 @@ export function Layout() {
       <header className="sticky top-0 z-40 border-b border-border bg-brand-navy text-white shadow-lg">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
           <Link to="/" className="flex items-center gap-3 min-w-0">
-            <img src="/logo.png" alt="West Fresa" className="h-12 w-auto shrink-0" />
+            <img src="/logo.png" alt="West Fresa" className="h-20 w-auto shrink-0" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
