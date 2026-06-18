@@ -29,11 +29,10 @@ export function Layout() {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-border bg-brand-navy text-white shadow-lg overflow-hidden">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6 h-16">
-          <Link to="/" className="flex items-center gap-3 min-w-0 h-full relative">
-            <img src="/logo.png" alt="West Fresa" className="h-28 w-auto shrink-0 absolute left-0 top-1/2 -translate-y-1/2" />
-            <span className="invisible h-full w-32 shrink-0" aria-hidden="true" />
+      <header className="sticky top-0 z-40 border-b border-border bg-brand-navy text-white shadow-lg">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+          <Link to="/" className="flex items-center gap-3 min-w-0">
+            <img src="/logo.png" alt="West Fresa" className="h-20 w-auto shrink-0" />
           </Link>
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
